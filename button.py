@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import requests
 from time import sleep
 
-pushbutton_pin = 8  # Pode ser alterado para outro pino se necessário
+pushbutton_pin = 8  
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pushbutton_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
@@ -11,8 +11,8 @@ GPIO.setup(pushbutton_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 def send_post_request():
     data = {'data': 'Botão pressionado'}
     try:
-        # Altere aqui para usar o localhost do seu PC
-        response = requests.post('http://127.0.0.1:5000', json=data)  # Usa o localhost ou IP local
+       
+        response = requests.post('http://127.0.0.1:5000', json=data) 
         if response.status_code == 201:
             print("Mensagem enviada com sucesso!")
         else:

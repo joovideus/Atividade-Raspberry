@@ -18,14 +18,14 @@
         let pubnub;
 
         const setupPubNub = () => {
-            // Configuração do PubNub
+           
             pubnub = new PubNub({
                 publishKey: "pub-c-9b1959c5-4f1d-4ce6-b22e-66e5225235e5",
                 subscribeKey: "sub-c-7926c31d-f8fd-45e1-b1ea-3547d857274c",
                 userId: "pubnub-index"
             });
             
-            // Inscrição no canal
+     
             const channel = pubnub.channel('meu_canal');
             const subscription = channel.subscription();
 
